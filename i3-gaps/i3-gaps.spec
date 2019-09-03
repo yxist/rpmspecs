@@ -122,7 +122,7 @@ install -Dpm0644 %{SOURCE1} \
 %doc docs/*.{html,png} pseudo-doc/doxygen/
 
 %changelog
-* Tue Sep 03 2019 Peter Mann <pm@xdd.sk> - 4.17.1
+* Tue Sep 03 2019 Peter Mann <pm@xdd.sk> - 4.17.1-1
 - Update to new version
 
 * Mon May 13 2019 Greg Wildman <greg@techno.co.za> - 4.16i.1
