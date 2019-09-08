@@ -1,12 +1,13 @@
 Name:           betterlockscreen
 Version:        3.0.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A nice i3lock-color wrapper
 
 License:        MIT
 URL:            https://github.com/pavanjadhaw/betterlockscreen
 Source0:        https://github.com/pavanjadhaw/betterlockscreen/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
+BuildArch:      noarch
 Requires:       ImageMagick
 Requires:       bash
 Requires:       bc
@@ -37,5 +38,8 @@ install -Dm755 %{name} %{buildroot}%{_bindir}/%{name}
 %doc README.md examples
 
 %changelog
+* Sun Sep 08 2019 Peter Mann <pm@xdd.sk> - 3.0.1-2
+- Set build arch to noarch
+
 * Wed Sep 04 2019 Peter Mann <pm@xdd.sk> - 3.0.1-1
 - Initial package
