@@ -1,9 +1,12 @@
 %global fontname termsyn
 %global fontconf 64-%{fontname}.conf
 
+# Font catalog
+%global catalog %{_sysconfdir}/X11/fontpath.d
+
 Name:           %{fontname}-fonts
 Version:        1.8.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Monospaced font based on terminus and tamsyn
 
 License:        GPLv2
@@ -14,6 +17,7 @@ Source2:        %{fontname}.metainfo.xml
 
 BuildArch:      noarch
 BuildRequires:  fontpackages-devel
+BuildRequires:	/usr/bin/mkfontdir
 BuildRequires:  libappstream-glib
 	
 Requires:       fontpackages-filesystem
@@ -40,6 +44,11 @@ install -m 0644 -p %{SOURCE1} \
 ln -s %{_fontconfig_templatedir}/%{fontconf} \
       %{buildroot}%{_fontconfig_confdir}/%{fontconf}
 
+
+install -m 0755 -d %{buildroot}%{catalog}
+ln -s %{_fontdir} %{buildroot}%{catalog}/%{fontname}:unscaled
+/usr/bin/mkfontdir %{buildroot}%{_fontdir}
+
 # Add AppStream metadata file
 install -Dm 0644 -p %{SOURCE2} \
         %{buildroot}%{_datadir}/metainfo/%{fontname}.metainfo.xml
@@ -51,9 +60,14 @@ appstream-util validate-relax --nonet \
 %_font_pkg -f %{fontconf} *.pcf
 
 %doc README.termsyn
+%{catalog}/%{fontname}:unscaled
+%{_fontdir}/fonts.dir
 %{_datadir}/metainfo/%{fontname}.metainfo.xml
 
 
 %changelog
+* Sun Sep 08 2019 Peter Mann <pm@xdd.sk> - 1.8.7-2
+- Make font discoverable by Xorg
+
 * Sun Sep 08 2019 Peter Mann <pm@xdd.sk> - 1.8.7-1
 - Initial package
