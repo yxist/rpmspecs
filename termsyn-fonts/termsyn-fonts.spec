@@ -7,8 +7,8 @@ Release:        1%{?dist}
 Summary:        Monospaced font based on terminus and tamsyn
 
 License:        GPLv2
-URL:            http://sourceforge.net/projects/termsyn
-Source0:        http://downloads.sourceforge.net/project/%{fontname}/%{fontname}-%{version}.tar.gz
+URL:            https://sourceforge.net/projects/termsyn
+Source0:        https://downloads.sourceforge.net/project/%{fontname}/%{fontname}-%{version}.tar.gz
 Source1:        %{name}-fontconfig.conf
 Source2:        %{fontname}.metainfo.xml
 
