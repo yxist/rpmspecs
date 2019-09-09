@@ -75,5 +75,5 @@ export PKG_CONFIG_PATH="%{buildroot}/vte-static/lib/pkgconfig"
 %doc README.rst
 
 %changelog
-* Wed Sep 04 2019 Peter Mann <pm@xdd.sk> - 15-3
+* Mon Sep 09 2019 Peter Mann <pm@xdd.sk> - 15-3
 - Initial package
