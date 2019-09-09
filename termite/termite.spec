@@ -3,7 +3,7 @@
 
 Name:           termite
 Version:        15
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A simple VTE-based terminal
 
 License:        LGPLv2+
@@ -23,6 +23,7 @@ BuildRequires: libtool
 Requires: gnutls
 Requires: gtk3
 Requires: pcre2
+Requires: vte291
 
 %description
 A keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or
@@ -74,5 +75,8 @@ export PKG_CONFIG_PATH="%{buildroot}/vte-static/lib/pkgconfig"
 %doc README.rst
 
 %changelog
+* Wed Sep 04 2019 Peter Mann <pm@xdd.sk> - 15-2
+- Add vte291 dependency
+
 * Wed Sep 04 2019 Peter Mann <pm@xdd.sk> - 15-1
 - Initial package
