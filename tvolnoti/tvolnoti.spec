@@ -2,7 +2,7 @@
 
 Name:           tvolnoti
 Version:        20160801git
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Lightweight volume notification for Linux (with skin support) 
 
 License:        GPLv3
@@ -16,6 +16,7 @@ BuildRequires:  pkgconfig(gtk+-2.0)
 Requires: dbus
 Requires: dbus-glib
 Requires: gtk2
+Requires: gdk-pixbuf2
 
 %description
 Volnoti is a lightweight volume notification daemon for GNU/Linux and other POSIX operating
@@ -51,4 +52,5 @@ This fork adds some additional options to the original volnoti program and adds 
 
 
 %changelog
-
+* Mon Sep 09 2019 Peter Mann <pm@xdd.sk> - 20160801git-2
+- Initial package
